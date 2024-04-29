@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Viewport for responsive web design -->
+    <title>Font Color and Border Control</title> <!-- Document title -->
+    <style>
+        #customParagraph { border: 2px solid black; padding: 10px; } /* Default styling for the paragraph */
+    </style>
+</head>
+<body>
+    <p id="customParagraph">This is a paragraph with dynamic styling.</p> <!-- Paragraph element to be styled -->
+    RGB Color: <input type="text" id="rgbInput" placeholder="e.g., 255,0,0"> <!-- Input for RGB values -->
+    Border Width: <input type="number" id="borderWidthInput"> <!-- Input for border width -->
+    <button onclick="updateStyle()">Apply</button> <!-- Button to apply styles -->
+
+    <script>
+        function updateStyle() {
+            var rgb = document.getElementById('rgbInput').value; // Gets RGB values from input
+            var borderWidth = document.getElementById('borderWidthInput').value; // Gets border width from input
+            var paragraph = document.getElementById('customParagraph'); // Selects the paragraph to be styled
+            paragraph.style.borderColor = `rgb(${rgb})`; // Applies the RGB values to the border color
+            paragraph.style.borderWidth = `${borderWidth}px`; // Applies the border width
+        }
+    </script>
+</body>
+</html>
